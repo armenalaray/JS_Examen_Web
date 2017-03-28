@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<!---->
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div id = "menu">
+	<ul class = "ulMenu">
+		<li><img src="#"></li>
+		<li><a>Inicio</a></li>
+		<li><a>Somos</a></li>
+		<li><a>Galeria</a></li>
+		<li><a>Contacto</a></li>
+		
+	</ul>
+</div>
+
+<div id = "principal">
+	<ul>
+		<li><h1>Titulo</h1></li>
+		<li><img src="#"></li>
+		<li><p>Contenido</p></li>
+		<li><img src="#"></li>
+	</ul>
+</div>
+
+
+<div id = "pie">
+	<ul>
+		<li><img src="#"></li>
+		<li><a>inicio</a></li>
+	</ul>
+</div>
+
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$("ul").css({"list-style-type": "none",
+				"display": "inline-block"});
+	//$("#menu").find("ul").css("height","10%");
+	var menuItems = $("#menu").find("li").addClass("sections");
+	menuItems.css({"background-color": "white",
+	"":""
+	});
+});
+</script>
+</body>
+</html>

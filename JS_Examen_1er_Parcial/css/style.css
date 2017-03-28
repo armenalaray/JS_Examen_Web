@@ -1,0 +1,46 @@
+body, html{
+	display:inline-block;
+	height:100%;
+	width:100%;
+	margin: 0px;
+}
+
+#menu{
+	height:100%;
+	width: 20%;
+	background-color:#444951;
+	display:inline-block;
+}
+
+
+#principal{
+	float:right;
+	width:66.66%;
+	height:100%;
+	display:inline-block;
+}
+
+#pie{
+	position:fixed;
+	bottom: 0;
+    right: 0;
+	/*float:right;*/
+	width:300px;
+	height:100px;
+	display:inline-block;
+}
+
+.ulMenu{
+	    list-style-type: none;
+    display: inline-block;
+    height: 100px;
+    width: 50%;
+    margin: 0px 25%;
+    padding: 0px;	
+}
+.sections {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: 80%;
+}
