@@ -6,14 +6,16 @@
 </head>
 <body>
 <div id = "menu">
+	
 	<ul class = "ulMenu">
-		<li><img src="#"></li>
-		<li><a>Inicio</a></li>
-		<li><a>Somos</a></li>
-		<li><a>Galeria</a></li>
-		<li><a>Contacto</a></li>
+		<li class ="logo"><img src="img/logo.jpg" width = "100%"></li>
+		<li class = "sections"><a>Inicio</a></li>
+		<li class = "sections"><a>Somos</a></li>
+		<li class = "sections"><a>Galeria</a></li>
+		<li class = "sections"><a>Contacto</a></li>
 		
 	</ul>
+	
 </div>
 
 <div id = "principal">
@@ -28,7 +30,7 @@
 
 <div id = "pie">
 	<ul>
-		<li><img src="#"></li>
+		<li><img src="img/logo.jpg" width = "100%"></li>
 		<li><a>inicio</a></li>
 	</ul>
 </div>
@@ -38,9 +40,12 @@
 $(document).ready(function(){
 	$("ul").css({"list-style-type": "none",
 				"display": "inline-block"});
+	//$("li").css("box-sizing", "border-box");
+	
 	//$("#menu").find("ul").css("height","10%");
-	var menuItems = $("#menu").find("li").addClass("sections");
-	menuItems.css({"background-color": "white",
+	//var menuItems = $("#menu").find("li").addClass("sections");
+	
+	$("#menu").find("li").css({"background-color": "white",
 	"":""
 	});
 });
