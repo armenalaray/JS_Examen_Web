@@ -21,14 +21,7 @@ body, html{
 }
 
 
-#principal {
-    position: absolute;
-    left: 382px;
-    float: right;
-    /*width: 66.66%;*/
-    height: 100%;
-    display: inline-block;
-}
+
 
 
 /*
@@ -85,12 +78,21 @@ body, html{
     border-width: 5px;
 }
 
+#principal {
+    position: absolute;
+    left: 382px;
+    float: right;
+    /* width: 66.66%; */
+    height: 100%;
+    display: inline-block;
+}
 
 #contentBox {
     text-align: center;
     padding-left: 0px;
-    width: 50%;
-    margin: 0px 25%;
+    width: 60%;
+    margin-right: 30%;
+    margin-left: 10%;
     height: 100%;
 }
 
@@ -101,13 +103,32 @@ h1 ,p{
 .maintitle {
     background-color: white;
     height: 5%;
-    margin-top: 10%;
+    margin-top: 5%;
     padding-top: 9px;
+    float: left;
+    width: 100%;
 }
 .content {
-    background-color: white;
-    height: 43px;
-	margin-top: 20%;
+    height: 49%;
+    padding: 0px 2%;
+    /* margin-top: 15%; */
+    background-color: #444951;
+    display: inline-block;
+    width: 46%;
+    float: left;
+    padding-top: 4%;
+    margin-bottom: 5%;
+}
+.chart {
+    height: 55%;
+    padding: 0px 2%;
+    /* margin-top: 15%; */
+    background-color: #444951;
+    display: inline-block;
+    width: 96%;
+    float: left;
+    padding-top: 4%;
+    margin-bottom: 5%;
 }
 
 #pie {

@@ -20,10 +20,12 @@
 
 <div id = "principal">
 	<ul id ="contentBox">
-		<li data_id = "1" class = "maintitle"><h1>Titulo</h1></li>
-		<li class = "content"><img src="#"></li>
-		<li class = "content"><p>Contenido</p></li>
-		<li class = "content"><img src="#"></li>
+		<li data_id = "index" class = "maintitle"><h1>Titulo</h1></li>
+		<li data_id = "index" class = "content"><p>Contenido</p></li>
+		<li data_id = "index" class = "content"><img src="img/fundOverview.png" width="100%"></li>
+		<li data_id = "index" class = "maintitle"><h1>Charts</h1></li>
+		<li data_id = "index" class = "chart"><img src="img/chart.jpg" width ="100%"></li>
+		
 	</ul>
 </div>
 
@@ -40,10 +42,13 @@
 $(document).ready(function(){
 	$("ul").css({"list-style-type": "none",
 				"display": "inline-block"});
+				
+	$("a").css({"text-decoration":"none", "color":"#444951"});
 	//$("li").css("box-sizing", "border-box");
 	
 	//$("#menu").find("ul").css("height","10%");
 	//var menuItems = $("#menu").find("li").addClass("sections");
+	//-------------------------------------------------------
 	var bodyWidth = $("body").width();
 	var menuWidth = $("#menu").width();
 	
@@ -51,16 +56,37 @@ $(document).ready(function(){
 	var principalWidth = bodyWidth - menuWidth;
 	$("#principal").css("width", principalWidth);
 	
-	//$("#pie").find("li").css("float","left");
 	
 	$("#menu li").css("background-color", "white");
 	
-	//$("#pie li").css("float", "right");
-	/*$("#menu").find("li").css({"background-color": "white",
-	"":""
-	});*/
+	/*----------------------------------------------------
+	aqui empieza el contenido variable
+	*/
+	/*Pagina inicio*/
+	var mainTitle = '<li data_id = "1" class = "maintitle"><h1>Titulo</h1></li>';
+	var content1 = '<li class = "content"><p>Contenido</p></li>';
+	var content2 = '<li class = "content"><img src="img/fundOverview.png" width="100%"></li>';
+	var secondTitle = '<li data_id = "1" class = "maintitle"><h1>Charts</h1></li>';
+	var content3 = '<li class = "chart"><img src="img/chart.jpg" width ="100%"></li>';
 	
+	var inicioC1 = {data_id:"index",content:'<h1>Titulo</h1>'};
+	var inicioC2 = {data_id:"index",content:'<p>Contenido</p>'};
+	var inicioC3 = {data_id:"index",content:'<img src="img/fundOverview.png" width="100%">'};
+	var inicioC4 = {data_id:"index",content:'<h1>Charts</h1>'};
+	var inicioC5 = {data_id:"index",content:'<img src="img/chart.jpg" width ="100%">'};
 	
+	var somosC1 =  {data_id:"somos",content:'<h1>Somos</h1>'};
+	
+	$("#menu li:nth-child(2)").hover(function(){
+		
+	},function(){
+	});
+	
+	console.log($("#menu li:first-child"));
+	/*
+	for (var i = 0; i <= $("#principal li").length; i++){
+		if(
+	}*/
 	
 });
 </script>
