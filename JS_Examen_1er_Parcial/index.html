@@ -9,17 +9,17 @@
 	
 	<ul class = "ulMenu">
 		<li class ="logo"><img src="img/logo.jpg" width = "100%"></li>
-		<li class = "sections"><a>Inicio</a></li>
-		<li class = "sections"><a>Somos</a></li>
-		<li class = "sections"><a>Galeria</a></li>
-		<li class = "sections"><a>Contacto</a></li>
+		<li class = "sections"><a href="#">Inicio</a></li>
+		<li class = "sections"><a href="#">Somos</a></li>
+		<li class = "sections"><a href="#">Galeria</a></li>
+		<li class = "sections"><a href="#">Contacto</a></li>
 		
 	</ul>
 	
 </div>
 
 <div id = "principal">
-	<ul>
+	<ul id ="contentBox">
 		<li><h1>Titulo</h1></li>
 		<li><img src="#"></li>
 		<li><p>Contenido</p></li>
@@ -44,10 +44,18 @@ $(document).ready(function(){
 	
 	//$("#menu").find("ul").css("height","10%");
 	//var menuItems = $("#menu").find("li").addClass("sections");
+	var bodyWidth = $("body").width();
+	var menuWidth = $("#menu").width();
+	
+	console.log(menuWidth);
+	var principalWidth = bodyWidth - menuWidth;
+	$("#principal").css("width", principalWidth);
 	
 	$("#menu").find("li").css({"background-color": "white",
 	"":""
 	});
+	
+	
 });
 </script>
 </body>
