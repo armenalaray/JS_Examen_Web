@@ -78,8 +78,10 @@ $(document).ready(function(){
 	var somosC1 =  {data_id:"somos",content:'<h1>Somos</h1>'};
 	
 	$("#menu li:nth-child(2)").hover(function(){
+		$(this).css("background-color","#a8a9ad");
 		
 	},function(){
+		$(this).css("background-color","white");
 	});
 	
 	console.log($("#menu li:first-child"));
