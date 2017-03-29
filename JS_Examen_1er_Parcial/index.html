@@ -20,18 +20,18 @@
 
 <div id = "principal">
 	<ul id ="contentBox">
-		<li><h1>Titulo</h1></li>
-		<li><img src="#"></li>
-		<li><p>Contenido</p></li>
-		<li><img src="#"></li>
+		<li data_id = "1" class = "maintitle"><h1>Titulo</h1></li>
+		<li class = "content"><img src="#"></li>
+		<li class = "content"><p>Contenido</p></li>
+		<li class = "content"><img src="#"></li>
 	</ul>
 </div>
 
 
 <div id = "pie">
-	<ul>
-		<li><img src="img/logo.jpg" width = "100%"></li>
-		<li><a>inicio</a></li>
+	<ul id="footBox">
+		<li class ="footContent"><a>Inicio</a></li>
+		<li class ="footContentLogo"><img src="img/logo.jpg" width = "94%"></li>
 	</ul>
 </div>
 
@@ -51,9 +51,15 @@ $(document).ready(function(){
 	var principalWidth = bodyWidth - menuWidth;
 	$("#principal").css("width", principalWidth);
 	
-	$("#menu").find("li").css({"background-color": "white",
+	//$("#pie").find("li").css("float","left");
+	
+	$("#menu li").css("background-color", "white");
+	
+	//$("#pie li").css("float", "right");
+	/*$("#menu").find("li").css({"background-color": "white",
 	"":""
-	});
+	});*/
+	
 	
 	
 });

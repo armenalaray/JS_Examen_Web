@@ -30,16 +30,7 @@ body, html{
     display: inline-block;
 }
 
-#pie{
-	position:fixed;
-	bottom: 0;
-    right: 0;
-	/*float:right;*/
-	width:300px;
-	height:100px;
-	display:inline-block;
-	background-color:#444951;
-}
+
 /*
 .divMenu{
 	
@@ -83,7 +74,7 @@ body, html{
     display: inline-block;
     width: 100%;
     text-align: center;
-    height: 604%;
+    /*height: 604%;*/
     padding-top: 12%;
     border-top-style: none;
     border-right-style: solid;
@@ -100,6 +91,67 @@ body, html{
     padding-left: 0px;
     width: 50%;
     margin: 0px 25%;
+    height: 100%;
 }
+
+h1 ,p{
+	margin:0px;
+}
+
+.maintitle {
+    background-color: white;
+    height: 5%;
+    margin-top: 10%;
+    padding-top: 9px;
+}
+.content {
+    background-color: white;
+    height: 43px;
+	margin-top: 20%;
+}
+
+#pie {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    /* float: right; */
+    width: 367px;
+    height: 120px;
+    display: inline-block;
+    background-color: #444951;
+}
+
+#footBox{
+	padding-left:0px;
+}
+
+
+.footContent {
+    position: absolute;
+    right: 0px;
+    bottom: 12%;
+    float: right;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    padding: 9% 0px;
+    font-size: 20px;
+    background-color: white;
+}
+
+.footContentLogo {
+    position: absolute;
+    bottom: 9%;
+    left: 0px;
+    float: right;
+    display: inline-block;
+    width: 70%;
+}
+
+
+
+
+
+
 
 
