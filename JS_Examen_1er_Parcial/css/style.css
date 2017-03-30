@@ -173,12 +173,12 @@ input[type=text], input[type=email] , input[type=submit]{
 }
 
 .footContentLogo {
-    position: absolute;
-    bottom: 9%;
-    left: 0px;
+    position: fixed;
+    bottom: 2%;
+    right: 148px;
     float: right;
     display: inline-block;
-    width: 70%;
+    width: 7%;
 }
 
 

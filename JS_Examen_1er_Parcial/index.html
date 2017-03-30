@@ -117,10 +117,28 @@ $(document).ready(function(){
 	/*-------------------------------------------------------
 	menu hover
 	*/
+	
+	
+	
+	
 	var count  = $("#menu li");
 	//console.log(count.length);
 	var local = $("#principal li:first-child").html();
 	var onClick = false;
+	
+	var originalWidth = $(".footContentLogo").css("width");
+	$(".footContentLogo").hover(function(){
+		$(this).animate({
+			width: '10%'
+		});
+	
+	},function(){
+		$(this).animate({
+			width: originalWidth
+		});
+	});
+	
+	
 	//console.log(local);
 	for (var i = 2; i <= count.length; i++){
 		$('#menu li:nth-child('+i+')').hover(function(){
