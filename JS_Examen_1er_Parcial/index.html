@@ -112,6 +112,8 @@ $(document).ready(function(){
 	'<li class = "content"><img src="img/fundDetails.png" width="100%"></li>',
 	'<li class = "content"><img src="img/TopTenHoldings.png" width="92%"></li>'];
 
+	var contentContacto = ['<li class = "maintitle"><h1>Contacto</h1></li>',
+'<li class = "chart"><input type="text" name="firstname" placeholder="Ingresa tu nombre"><input type="text" name="mail" placeholder="Ingresa tu correo"><input type="text" name="telefono" placeholder="Ingresa tu telefono"><input type="text" name="mensaje" placeholder="Ingresa un mensaje"><input type="submit" value="Submit"><div class="contact">Preguntas y aclaraciones al siguiente correo:securities@gmail.com o favor de marcar al siguiente telefono:(33)2345678Av. Insurgentes #234 col. Palacio, Gdl,Jalisco,Mex.</div></li>'];
 	/*-------------------------------------------------------
 	menu hover
 	*/
@@ -130,18 +132,27 @@ $(document).ready(function(){
 			
 			if(dataId == "inicio"){
 				$("#principal li:first-child").html(mainTitle);
+				$("#principal li:first-child").hide();
+				$("#principal li:first-child").fadeIn("slow");
+				
 			}
 			else if(dataId == "somos"){
 				$("#principal li:first-child").html(somos);
+				$("#principal li:first-child").hide();
+				$("#principal li:first-child").fadeIn("slow");
 			}
 			else if(dataId == "galeria"){
 				$("#principal li:first-child").html(galeria);
+				$("#principal li:first-child").hide();
+				$("#principal li:first-child").fadeIn("slow");
 			}
 			else if(dataId == "contacto"){
 				$("#principal li:first-child").html(contacto);
+				$("#principal li:first-child").hide();
+				$("#principal li:first-child").fadeIn("slow");
 			}
 		},function(){
-			console.log(onClick);
+			//console.log(onClick);
 			$(this).css("background-color","white");
 			if(onClick == false){
 				$("#principal li:first-child").html(local);
@@ -161,7 +172,21 @@ $(document).ready(function(){
 					txt += contentInicio[j];
 				}
 				$("#principal ul").html(txt);
-				$("#principal .mainTitle h1").slideDown();
+				//cargar animaciones
+				for (var k = 0; k < contentInicio.length; k++){
+					$('#principal li:eq('+k+')').hide();	
+				}
+				for (var l = 0; l < contentInicio.length; l++){
+					if(l >=1 && l <= 2){
+						$('#principal li:eq('+l+')').slideDown("slow");
+					}
+					else{
+						$('#principal li:eq('+l+')').fadeIn("slow");
+					}
+				}
+				
+				//$("#principal li:first-child").fadeIn("slow");
+				
 				local = $("#principal li:first-child").html(); 
 			}
 			else if(dataId == "somos"){
@@ -170,6 +195,18 @@ $(document).ready(function(){
 					txt += contentSomos[j];
 				}
 				$("#principal ul").html(txt);
+				//cargar animaciones
+				for (var k = 0; k < contentSomos.length; k++){
+					$('#principal li:eq('+k+')').hide();	
+				}
+				for (var l = 0; l < contentSomos.length; l++){
+					if(l >=1 && l <= 2){
+						$('#principal li:eq('+l+')').slideDown("slow");
+					}
+					else{
+						$('#principal li:eq('+l+')').fadeIn("slow");
+					}
+				}
 				local = $("#principal li:first-child").html(); 
 			}
 			else if(dataId == "galeria"){
@@ -178,10 +215,39 @@ $(document).ready(function(){
 					txt += contentGaleria[j];
 				}
 				$("#principal ul").html(txt);
+				//cargar animaciones
+				for (var k = 0; k < contentGaleria.length; k++){
+					$('#principal li:eq('+k+')').hide();	
+				}
+				for (var l = 0; l < contentGaleria.length; l++){
+					if(l >=1 && l <= 2){
+						$('#principal li:eq('+l+')').slideDown("slow");
+					}
+					else{
+						$('#principal li:eq('+l+')').fadeIn("slow");
+					}
+				}
 				local = $("#principal li:first-child").html(); 
 			}
 			else if(dataId == "contacto"){
-				$("#principal li:first-child").html(contacto);
+				var txt = "";
+				for (var j = 0; j < contentContacto.length; j++){
+					txt += contentContacto[j];
+				}
+				$("#principal ul").html(txt);
+				//cargar animaciones
+				for (var k = 0; k < contentContacto.length; k++){
+					$('#principal li:eq('+k+')').hide();	
+				}
+				for (var l = 0; l < contentContacto.length; l++){
+					if(l >=1 && l <= 2){
+						$('#principal li:eq('+l+')').slideDown("slow");
+					}
+					else{
+						$('#principal li:eq('+l+')').fadeIn("slow");
+					}
+				}
+				local = $("#principal li:first-child").html(); 
 			}
 		});
 	}
