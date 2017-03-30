@@ -98,13 +98,13 @@ $(document).ready(function(){
 	var contacto = '<h1>Contacto</h1>';
 	
 	var contentInicio = ['<li class = "maintitle"><h1>Fidelity  Magellan Fund</h1></li>',
-	'<li class = "content"><p>Contenido</p></li>',
+	'<li class = "content"><div class="contact"><p>The Fidelity Magellan Fund (Mutual fund: FMAGX) is a US-domiciled mutual fund from the Fidelity family of funds. It is perhaps the world’s best known actively managed mutual fund. On January 14, 2008, Fidelity announced that the fund would open to new investors for the first time in over a decade.</p></div></li>',
 	'<li class = "content"><img src="img/fundOverview.png" width="100%"></li>',
 	'<li class = "maintitle"><h1>Charts</h1></li>',
 	'<li class = "chart"><img src="img/chart.jpg" width ="100%"></li>'];
 	
 	var contentSomos = ['<li class = "maintitle"><h1>Somos</h1></li>',
-	'<li class = "chart"><p>Contenido</p></li>',
+	'<li class = "chart"><div class="contact"><p>The advantage of investing with us. We believe in making the complex, simpler—whether you work with us in person, on the phone, or online. From investing to financial planning and pricing, our goal is to be straightforward and help with your unique needs.</p></div></li>',
 	'<li class = "maintitle"><h1>Results</h1></li>',
 	'<li class = "chart"><img src="img/QuarterEndAverage.png" width ="100%"></li>'];
 	
@@ -156,6 +156,34 @@ $(document).ready(function(){
 		$(this).css("background-color","white");
 		if(onClick == false){
 			$("#principal li:first-child").html(local);
+		}
+	});
+	
+	$(".footContent").click(function(){
+		var dataId = $(this).attr("data_id");
+		onClick = true;
+		if(dataId == "inicio"){
+			var txt = "";
+			for (var j = 0; j < contentInicio.length; j++){
+				txt += contentInicio[j];
+			}
+			$("#principal ul").html(txt);
+			//cargar animaciones
+			for (var k = 0; k < contentInicio.length; k++){
+				$('#principal li:eq('+k+')').hide();	
+			}
+			for (var l = 0; l < contentInicio.length; l++){
+				if(l >=1 && l <= 2){
+					$('#principal li:eq('+l+')').slideDown("slow");
+				}
+				else{
+					$('#principal li:eq('+l+')').fadeIn("slow");
+				}
+			}
+			
+			//$("#principal li:first-child").fadeIn("slow");
+			
+			local = $("#principal li:first-child").html(); 
 		}
 	});
 	
