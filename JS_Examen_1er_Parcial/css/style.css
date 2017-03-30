@@ -120,6 +120,7 @@ h1 ,p{
     margin-bottom: 5%;
 }
 
+input[type=text], input[type=email] , input[type=submit]{
     width: 89%;
     padding: 12px 20px;
     margin-bottom: 6%;
