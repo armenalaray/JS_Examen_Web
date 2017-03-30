@@ -6,13 +6,12 @@
 </head>
 <body>
 <div id = "menu">
-	
 	<ul class = "ulMenu">
 		<li class ="logo"><img src="img/logo.jpg" width = "100%"></li>
-		<li class = "sections"><a href="#">Inicio</a></li>
-		<li class = "sections"><a href="#">Somos</a></li>
-		<li class = "sections"><a href="#">Galeria</a></li>
-		<li class = "sections"><a href="#">Contacto</a></li>
+		<li data_id = "inicio"class = "sections"><a href="#">Inicio</a></li>
+		<li data_id = "somos" class = "sections"><a href="#">Somos</a></li>
+		<li data_id = "galeria" class = "sections"><a href="#">Galeria</a></li>
+		<li data_id = "contacto" class = "sections"><a href="#">Contacto</a></li>
 		
 	</ul>
 	
@@ -44,26 +43,33 @@ $(document).ready(function(){
 				"display": "inline-block"});
 				
 	$("a").css({"text-decoration":"none", "color":"#444951"});
+	$("#menu li").css("background-color", "white");
+	
+	
 	//$("li").css("box-sizing", "border-box");
 	
 	//$("#menu").find("ul").css("height","10%");
 	//var menuItems = $("#menu").find("li").addClass("sections");
 	//-------------------------------------------------------
-	var bodyWidth = $("body").width();
-	var menuWidth = $("#menu").width();
 	
-	console.log(menuWidth);
-	var principalWidth = bodyWidth - menuWidth;
-	$("#principal").css("width", principalWidth);
-	
-	
-	$("#menu li").css("background-color", "white");
+	$(window).resize(function(){
+		var bodyWidth = $("body").width();
+		var menuWidth = $("#menu").width();
+		
+		
+		var principalWidth = bodyWidth - menuWidth;
+		//console.log(principalWidth);
+		$("#principal").css("width", principalWidth);
+	});
 	
 	/*----------------------------------------------------
 	aqui empieza el contenido variable
 	*/
 	/*Pagina inicio*/
-	var mainTitle = '<li data_id = "1" class = "maintitle"><h1>Titulo</h1></li>';
+	var mainTitle ='<h1>Titulo</h1>';
+	var somos = '<h1>Somos</h1>';
+	var galeria = '<h1>Galeria</h1>';
+	var contacto = '<h1>Contacto</h1>';
 	var content1 = '<li class = "content"><p>Contenido</p></li>';
 	var content2 = '<li class = "content"><img src="img/fundOverview.png" width="100%"></li>';
 	var secondTitle = '<li data_id = "1" class = "maintitle"><h1>Charts</h1></li>';
@@ -76,19 +82,48 @@ $(document).ready(function(){
 	var inicioC5 = {data_id:"index",content:'<img src="img/chart.jpg" width ="100%">'};
 	
 	var somosC1 =  {data_id:"somos",content:'<h1>Somos</h1>'};
-	
-	$("#menu li:nth-child(2)").hover(function(){
+	/*-------------------------------------------------------
+	menu hover
+	*/
+	var count  = $("#menu li");
+	//console.log(count.length);
+	var local = $("#principal li:first-child").html();
+	console.log(local);
+	for (var i = 2; i <= count.length; i++){
+		$('#menu li:nth-child('+i+')').hover(function(){
 		$(this).css("background-color","#a8a9ad");
 		
-	},function(){
-		$(this).css("background-color","white");
-	});
+		var dataId = $(this).attr("data_id");
+		
+		
+		if(dataId == "inicio"){
+			$("#principal li:first-child").html(mainTitle);
+		}
+		else if(dataId == "somos"){
+			$("#principal li:first-child").html(somos);
+		}
+		else if(dataId == "galeria"){
+			$("#principal li:first-child").html(galeria);
+		}
+		else if(dataId == "contacto"){
+			$("#principal li:first-child").html(contacto);
+		}
+		},function(){
+			$(this).css("background-color","white");
+			$("#principal li:first-child").html(local);
+			//var siteName = document.location.pathname.match(/[^\/]+$/)[0];
+			
+			
+		});
+	}
 	
-	console.log($("#menu li:first-child"));
-	/*
-	for (var i = 0; i <= $("#principal li").length; i++){
-		if(
-	}*/
+	
+	
+	//-------------------------------------------------------
+	
+	
+	//console.log($("#menu li:first-child"));
+	
 	
 });
 </script>
