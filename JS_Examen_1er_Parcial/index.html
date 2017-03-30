@@ -65,40 +65,51 @@
 <script src="js/jquery.js"></script>
 <script>
 function changed(){
+	var flag = 0;
 	var phone_pattern = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/; 
 	var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 	$(":text").change(function(){
+		
 		var name = $(this).attr("name");
 		if(name == "telefono"){
 			//checa si el dato son puras letras mayusculas
-			console.log(true);
+			//console.log(true);
 			if (phone_pattern.test( $(this).val())){
-				alert('Telefono correcto');
+				//alert('Telefono correcto');
+				flag++;
+				
 			}
 			else 
 			{
-				alert('Telefono incorrecto - tienen que ser 10 numeros');
+				//alert('Telefono incorrecto - tienen que ser 10 numeros');
+				
 			}
 		}
 		if(name == "firstname"){
 			var name_pattern = /([a-z])/;
 			if(name_pattern.test($(this).val())){
-				alert('Nombre Correcto');
+				//alert('Nombre Correcto');
+				flag++;
 			}
 			else{
-				alert('Nombre incorrecto - tienen que ser letras');
+				//alert('Nombre incorrecto - tienen que ser letras');
+				
 			}
 		}
 		if(name == "mail"){
-			
-			
 			if (testEmail.test($(this).val())){
-				alert('Email OK');
+				//alert('Email OK');
+				flag++;
 			}
-			else {alert('Mail failed');}
+			else {
+				
+			}
+		}
+		console.log(flag);
+		if(flag >= 3){
+			$(":submit").show();
 		}
 	});
-
 }
 $(document).ready(function(){
 	$("ul").css({"list-style-type": "none",
@@ -223,6 +234,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	var bandera = "";
 	//console.log(local);
 	for (var i = 2; i <= count.length; i++){
 		$('#menu li:nth-child('+i+')').hover(function(){
@@ -350,23 +362,18 @@ $(document).ready(function(){
 					}
 				}
 				changed();
+				
+				$(":submit").hide();
 				//console.log(changed);
 				local = $("#principal li:first-child").html(); 
 			}
 		});
 	}
-	
+	$(":submit").hide();
 	changed();
 	
-	//-------------------------------------------------------
 	
-	
-	
-	
-	
-	
-	//console.log($("#menu li:first-child"));
-	
+
 	
 });
 </script>
