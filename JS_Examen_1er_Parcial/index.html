@@ -37,10 +37,14 @@
 		<li class = "content"><img src="img/TopTenHoldings.png" width="92%"></li>
 		-->
 		<li class = "maintitle"><h1>Contacto</h1></li>
-		<li class = "chart"><input type="text" name="firstname" placeholder="Ingresa tu nombre">
-		<input type="text" name="mail" placeholder="Ingresa tu correo">
-		<input type="text" name="telefono" placeholder="Ingresa tu telefono">
-		<input type="text" name="mensaje" placeholder="Ingresa un mensaje">
+		<li class = "chart">
+		
+			<input type="text" name="firstname" placeholder="Ingresa tu nombre">
+			<input type="text" name="mail" placeholder="Ingresa tu correo">
+			<input type="text" name="telefono" placeholder="Ingresa tu telefono">
+			<input type="text" name="mensaje" placeholder="Ingresa un mensaje">
+			<input type="submit" value="Submit">
+			
 		<div class="contact">Preguntas y aclaraciones al siguiente correo:
 		securities@gmail.com o favor de marcar al siguiente telefono:(33)2345678
 		Av. Insurgentes #234 col. Palacio, Gdl,Jalisco,Mex.</div>
@@ -185,20 +189,38 @@ $(document).ready(function(){
 	
 	
 	//-------------------------------------------------------
+	var phone_pattern = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/; 
+	var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 	$(":text").change(function(){
 		var name = $(this).attr("name");
 		if(name == "telefono"){
 			//checa si el dato son puras letras mayusculas
-			var phone_pattern = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/; 
 			console.log(true);
 			if (phone_pattern.test( $(this).val())){
-				alert('Phone OK');
+				alert('Telefono correcto');
 			}
 			else 
 			{
-				alert('Phone failed');
+				alert('Telefono incorrecto - tienen que ser 10 numeros');
 			}
-		}	
+		}
+		if(name == "firstname"){
+			var name_pattern = /([a-z])/;
+			if(name_pattern.test($(this).val())){
+				alert('Nombre Correcto');
+			}
+			else{
+				alert('Nombre incorrecto - tienen que ser letras');
+			}
+		}
+		if(name == "mail"){
+			
+			
+			if (testEmail.test($(this).val())){
+				alert('Email OK');
+			}
+			else {alert('Mail failed');}
+		}
 	});
 	
 	
