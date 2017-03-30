@@ -19,20 +19,26 @@
 
 <div id = "principal">
 	<ul id ="contentBox">
-		<!--<li data_id = "index" class = "maintitle"><h1>Titulo</h1></li>
+		
+		<li data_id = "index" class = "maintitle"><h1>Fidelity Magellan Fund</h1></li>
 		<li data_id = "index" class = "content"><p>Contenido</p></li>
 		<li data_id = "index" class = "content"><img src="img/fundOverview.png" width="100%"></li>
 		<li data_id = "index" class = "maintitle"><h1>Charts</h1></li>
 		<li data_id = "index" class = "chart"><img src="img/chart.jpg" width ="100%"></li>
-		-->
+		<!--
 		<li class = "maintitle"><h1>Somos</h1></li>
 		<li class = "chart"><p>Contenido</p></li>
 		<li class = "maintitle"><h1>Results</h1></li>
 		<li class = "chart"><img src="img/QuarterEndAverage.png" width ="100%"></li>
 		
+		<li class = "maintitle"><h1>Galeria</h1></li>
+		<li class = "content"><img src="img/fundDetails.png" width="100%"></li>
+		<li class = "content"><img src="img/TopTenHoldings.png" width="92%"></li>
 		
-		<!--<li data_id = "index" class = "content"><img src="img/fundDetails.png" width="100%"></li>-->
-		
+		<li class = "maintitle"><h1>Contacto</h1></li>
+		<li class = "chart">
+			
+		</li>-->
 	</ul>
 </div>
 
@@ -90,18 +96,10 @@ $(document).ready(function(){
 	'<li class = "maintitle"><h1>Results</h1></li>',
 	'<li class = "chart"><img src="img/QuarterEndAverage.png" width ="100%"></li>'];
 	
-	
-	var content2 = '<li class = "content"><img src="img/fundOverview.png" width="100%"></li>';
-	var secondTitle = '<li data_id = "1" class = "maintitle"><h1>Charts</h1></li>';
-	var content3 = '<li class = "chart"><img src="img/chart.jpg" width ="100%"></li>';
-	
-	var inicioC1 = {data_id:"index",content:'<h1>Titulo</h1>'};
-	var inicioC2 = {data_id:"index",content:'<p>Contenido</p>'};
-	var inicioC3 = {data_id:"index",content:'<img src="img/fundOverview.png" width="100%">'};
-	var inicioC4 = {data_id:"index",content:'<h1>Charts</h1>'};
-	var inicioC5 = {data_id:"index",content:'<img src="img/chart.jpg" width ="100%">'};
-	
-	var somosC1 =  {data_id:"somos",content:'<h1>Somos</h1>'};
+	var contentGaleria = ['<li class = "maintitle"><h1>Galeria</h1></li>',
+	'<li class = "content"><img src="img/fundDetails.png" width="100%"></li>',
+	'<li class = "content"><img src="img/TopTenHoldings.png" width="92%"></li>'];
+
 	/*-------------------------------------------------------
 	menu hover
 	*/
@@ -151,6 +149,7 @@ $(document).ready(function(){
 					txt += contentInicio[j];
 				}
 				$("#principal ul").html(txt);
+				$("#principal .mainTitle h1").slideDown();
 				local = $("#principal li:first-child").html(); 
 			}
 			else if(dataId == "somos"){
@@ -162,7 +161,12 @@ $(document).ready(function(){
 				local = $("#principal li:first-child").html(); 
 			}
 			else if(dataId == "galeria"){
-				$("#principal li:first-child").html(galeria);
+				var txt = "";
+				for (var j = 0; j < contentGaleria.length; j++){
+					txt += contentGaleria[j];
+				}
+				$("#principal ul").html(txt);
+				local = $("#principal li:first-child").html(); 
 			}
 			else if(dataId == "contacto"){
 				$("#principal li:first-child").html(contacto);
