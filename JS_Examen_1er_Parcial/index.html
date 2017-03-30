@@ -57,7 +57,7 @@
 
 <div id = "pie">
 	<ul id="footBox">
-		<li class ="footContent"><a>Inicio</a></li>
+		<li data_id = "inicio"class ="footContent"><a>Inicio</a></li>
 		<li class ="footContentLogo"><img src="img/logo.jpg" width = "94%"></li>
 	</ul>
 </div>
@@ -138,6 +138,26 @@ $(document).ready(function(){
 		});
 	});
 	
+	
+	$(".footContent").hover(function(){
+		onClick = false;
+		$(this).css("background-color","#a8a9ad");
+		
+		var dataId = $(this).attr("data_id");
+		
+		if(dataId == "inicio"){
+			$("#principal li:first-child").html(mainTitle);
+			$("#principal li:first-child").hide();
+			$("#principal li:first-child").fadeIn("slow");
+			
+		}
+	
+	},function(){
+		$(this).css("background-color","white");
+		if(onClick == false){
+			$("#principal li:first-child").html(local);
+		}
+	});
 	
 	//console.log(local);
 	for (var i = 2; i <= count.length; i++){
