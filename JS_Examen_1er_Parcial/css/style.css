@@ -119,6 +119,13 @@ h1 ,p{
     padding-top: 4%;
     margin-bottom: 5%;
 }
+
+input[type=text] {
+    width: 89%;
+    padding: 12px 20px;
+    margin-bottom: 6%;
+}
+
 .chart {
     height: 55%;
     padding: 0px 2%;
@@ -129,6 +136,11 @@ h1 ,p{
     float: left;
     padding-top: 4%;
     margin-bottom: 5%;
+}
+
+.contact {
+    color: white;
+    font-size: 17px;
 }
 
 #pie {

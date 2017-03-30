@@ -3,6 +3,7 @@
 <!---->
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<meta charset="UTF-8">
 </head>
 <body>
 <div id = "menu">
@@ -19,13 +20,13 @@
 
 <div id = "principal">
 	<ul id ="contentBox">
-		
+		<!--
 		<li data_id = "index" class = "maintitle"><h1>Fidelity Magellan Fund</h1></li>
 		<li data_id = "index" class = "content"><p>Contenido</p></li>
 		<li data_id = "index" class = "content"><img src="img/fundOverview.png" width="100%"></li>
 		<li data_id = "index" class = "maintitle"><h1>Charts</h1></li>
 		<li data_id = "index" class = "chart"><img src="img/chart.jpg" width ="100%"></li>
-		<!--
+		
 		<li class = "maintitle"><h1>Somos</h1></li>
 		<li class = "chart"><p>Contenido</p></li>
 		<li class = "maintitle"><h1>Results</h1></li>
@@ -34,11 +35,18 @@
 		<li class = "maintitle"><h1>Galeria</h1></li>
 		<li class = "content"><img src="img/fundDetails.png" width="100%"></li>
 		<li class = "content"><img src="img/TopTenHoldings.png" width="92%"></li>
-		
+		-->
 		<li class = "maintitle"><h1>Contacto</h1></li>
-		<li class = "chart">
-			
-		</li>-->
+		<li class = "chart"><input type="text" name="firstname" placeholder="Ingresa tu nombre">
+		<input type="text" name="mail" placeholder="Ingresa tu correo">
+		<input type="text" name="telefono" placeholder="Ingresa tu telefono">
+		<input type="text" name="mensaje" placeholder="Ingresa un mensaje">
+		<div class="contact">Preguntas y aclaraciones al siguiente correo:
+		securities@gmail.com o favor de marcar al siguiente telefono:(33)2345678
+		Av. Insurgentes #234 col. Palacio, Gdl,Jalisco,Mex.</div>
+		</li>
+		
+		
 	</ul>
 </div>
 
@@ -177,7 +185,24 @@ $(document).ready(function(){
 	
 	
 	//-------------------------------------------------------
-	var inicioContent = '<li data_id = "index" class = "maintitle"><h1>Titulo</h1></li><li data_id = "index" class = "content"><p>Contenido</p></li><li data_id = "index" class = "content"><img src="img/fundOverview.png" width="100%"></li><li data_id = "index" class = "maintitle"><h1>Charts</h1></li><li data_id = "index" class = "chart"><img src="img/chart.jpg" width ="100%"></li>';
+	$(":text").change(function(){
+		var name = $(this).attr("name");
+		if(name == "telefono"){
+			//checa si el dato son puras letras mayusculas
+			var phone_pattern = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/; 
+			console.log(true);
+			if (phone_pattern.test( $(this).val())){
+				alert('Phone OK');
+			}
+			else 
+			{
+				alert('Phone failed');
+			}
+		}	
+	});
+	
+	
+	
 	
 	//console.log($("#menu li:first-child"));
 	
