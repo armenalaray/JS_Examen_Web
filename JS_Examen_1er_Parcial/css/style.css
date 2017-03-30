@@ -61,6 +61,7 @@ body, html{
     border-color: #a8a9ad;
     box-sizing: border-box;
     border-width: 5px;
+	cursor:pointer;
 }
 
 .logo {
@@ -94,6 +95,7 @@ body, html{
     margin-right: 30%;
     margin-left: 10%;
     height: 100%;
+    min-width: 60%;
 }
 
 h1 ,p{
@@ -170,6 +172,7 @@ input[type=text], input[type=email] , input[type=submit]{
     padding: 9% 0px;
     font-size: 20px;
     background-color: white;
+	cursor:pointer;
 }
 
 .footContentLogo {
